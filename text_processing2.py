@@ -75,6 +75,7 @@ def to_camel_case(underscore_str):
     space_str = underscore_str.lower().replace('_', ' ')
     str_list = space_str.split()
     capital_str_list = list(map(lambda x: x.capitalize(), str_list))
-    capital_str_list[0] = capital_str_list[0].lower()
+    if len(capital_str_list) > 0:
+        capital_str_list[0] = capital_str_list[0].lower()
     camelcase_str = ''.join(capital_str_list)
     return camelcase_str
